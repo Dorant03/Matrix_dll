@@ -148,6 +148,19 @@ void Matrix::DIV_scalar(double** matrixA, int n_A, int m_A, double scalar)
 	}
 }
 
+void Matrix::transpose(double** matrixA, int n_A, int m_A)
+{
+	NEW(m_A, n_A);
+	NUL();
+	for ( int i = 0; i < m_A; i++)
+	{
+		for ( int j = 0; j < n_A; j++)
+		{
+			matrix[i][j]= matrixA[j][i];
+		}
+	}
+}
+
 void Matrix::inverse(double** matrixA, int _n)
 {
 	NEW(_n,_n);
