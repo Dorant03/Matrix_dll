@@ -122,6 +122,31 @@ void Matrix::SUB(double** matrixA, double** matrixB, int n_A, int m_A, int n_B, 
 	else cout<<"ERROR!!!!!!!!!!!!!"<<endl;
 }
 
+void Matrix::MUL_scalar(double** matrixA, int n_A, int m_A, double scalar)
+{
+	NEW(n_A, m_A);
+	NUL();
+	for ( int i = 0; i < n_A; i++)
+	{
+		for ( int j = 0; j < m_A; j++)
+		{
+			matrix[i][j]= matrixA[i][j]*scalar;
+		}
+	}
+}
+
+void Matrix::DIV_scalar(double** matrixA, int n_A, int m_A, double scalar)
+{
+	NEW(n_A, m_A);
+	NUL();
+	for ( int i = 0; i < n_A; i++)
+	{
+		for ( int j = 0; j < m_A; j++)
+		{
+			matrix[i][j]= matrixA[i][j]/scalar;
+		}
+	}
+}
 
 void Matrix::inverse(double** matrixA, int _n)
 {
