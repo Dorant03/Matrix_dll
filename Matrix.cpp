@@ -121,6 +121,25 @@ void Matrix::SUB(double** matrixA, double** matrixB, int n_A, int m_A, int n_B, 
 	}
 	else cout<<"ERROR!!!!!!!!!!!!!"<<endl;
 }
+void Matrix::MUL(double** matrixA, double** matrixB, int n_A, int m_A, int n_B, int m_B)
+{
+    if(m_A==n_B)
+	{
+		NEW(n_A, m_B);
+		NUL();
+		for ( int i = 0; i < n_A; i++)
+		{
+			for ( int j = 0; j < m_B; j++)
+			{
+				for(int k=0; k<m_A; k++)
+				{
+					matrix[i][j]=matrix[i][j]+matrixA[i][k]*matrixB[k][j];
+				}
+            }
+        }
+    }
+	else cout<<"ERROR!!!!!!!!!!!!!"<<endl;
+}
 
 void Matrix::MUL_scalar(double** matrixA, int n_A, int m_A, double scalar)
 {
